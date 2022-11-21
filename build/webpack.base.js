@@ -4,6 +4,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const webpack = require("webpack")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const isDev = process.env.NODE_ENV === "development" // 是否是开发模式
+isDev
+  ? require("dotenv").config({
+      path: path.resolve(__dirname, "../.env.development"),
+    })
+  : require("dotenv").config()
 
 module.exports = {
   entry: path.join(__dirname, "../src/index.tsx"), //入口文件
