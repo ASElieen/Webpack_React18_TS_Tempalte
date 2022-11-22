@@ -28,6 +28,7 @@ module.exports = {
     //配置后会注入到业务代码中 webpack解析代码在package.json中匹配到就会设置对应的值
     new webpack.DefinePlugin({
       "process.env.BASE_ENV": JSON.stringify(process.env.BASE_ENV),
+      "process.env": JSON.stringify(process.env),
     }),
 
     new webpack.ProvidePlugin({
